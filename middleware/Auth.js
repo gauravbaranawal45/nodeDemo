@@ -5,7 +5,7 @@ function verifyToken(req, res, next) {
   const token = bearerToken[1];
   if (!token)
     return res.status(403).send({ auth: false, message: "No token provided." });
-  jwt.verify(token, config.secretKey, function (err, decoded) {
+  jwt.verify(token, "@@gaurav@@", function (err, decoded) {
     if (err)
       return res
         .status(500)
